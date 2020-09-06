@@ -12,9 +12,8 @@ class ViewTransactionFragment : BaseFragment<FragmentViewTransactionBinding>() {
     override fun setBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentViewTransactionBinding {
-        return FragmentViewTransactionBinding.inflate(inflater,container,false)
-    }
+    ): FragmentViewTransactionBinding =
+        FragmentViewTransactionBinding.inflate(inflater, container, false)
 
 
 }

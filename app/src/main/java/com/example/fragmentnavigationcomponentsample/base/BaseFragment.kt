@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.navArgs
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment <T: ViewBinding> : Fragment() {

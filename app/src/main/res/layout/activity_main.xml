@@ -8,6 +8,12 @@
         tools:context=".activity.MainActivity">
 
 
+<!--
+Places all the fragments we are navigating
+app:navGraph : The navGraph specifies all of the destinations which users can navigate.
+app:defaultNavHost="true" :  attribute ensures that your NavHostFragment intercepts the system Back button.
+            NOTE:  If you have multiple hosts in the same layout be sure to specify only one default NavHost
+-->
     <fragment
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
