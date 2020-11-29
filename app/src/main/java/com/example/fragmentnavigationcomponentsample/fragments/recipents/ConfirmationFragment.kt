@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.fragmentnavigationcomponentsample.base.BaseFragment
 import com.example.fragmentnavigationcomponentsample.dataClass.Money
 import com.example.fragmentnavigationcomponentsample.databinding.FragmentConfirmationBinding
-import java.time.temporal.TemporalAmount
 
 
 class ConfirmationFragment : BaseFragment<FragmentConfirmationBinding>() {
@@ -33,8 +33,10 @@ class ConfirmationFragment : BaseFragment<FragmentConfirmationBinding>() {
             confirmationMessage.text = "You have send $${money.amount} to recipient $name"
 
             viewBalance.setOnClickListener {
-                navController.navigate(ConfirmationFragmentDirections
-                    .actionConfirmationFragmentToViewBalanceFragment(money.amount))
+                findNavController().navigate(
+                    ConfirmationFragmentDirections
+                        .actionConfirmationFragmentToViewBalanceFragment(money.amount)
+                )
             }
         }
     }

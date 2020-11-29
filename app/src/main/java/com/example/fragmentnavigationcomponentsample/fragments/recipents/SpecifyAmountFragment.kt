@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.fragmentnavigationcomponentsample.base.BaseFragment
 import com.example.fragmentnavigationcomponentsample.dataClass.Money
@@ -31,16 +32,21 @@ class SpecifyAmountFragment : BaseFragment<FragmentSpecifyAmountBinding>() {
         binding.apply {
 
             cancelBtn.setOnClickListener {
-                navController.navigate(SpecifyAmountFragmentDirections
-                    .actionSpecifyAmountFragmentPopIncludingMainFragment())
+                findNavController().navigate(
+                    SpecifyAmountFragmentDirections
+                        .actionSpecifyAmountFragmentPopIncludingMainFragment()
+                )
             }
 
             sendBtn.setOnClickListener {
 
-                val money = Money(inputAmount.text.toString().toInt())
+                val money =
+                    Money(inputAmount.text.toString().toInt()) // Money is a Parcelable object
 
-                navController.navigate(SpecifyAmountFragmentDirections
-                    .actionSpecifyAmountFragmentToConfirmationFragment(money,name))
+                findNavController().navigate(
+                    SpecifyAmountFragmentDirections
+                        .actionSpecifyAmountFragmentToConfirmationFragment(money, name)
+                )
             }
         }
     }

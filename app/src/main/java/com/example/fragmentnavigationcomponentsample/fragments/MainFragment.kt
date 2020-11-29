@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.fragmentnavigationcomponentsample.base.BaseFragment
 import com.example.fragmentnavigationcomponentsample.databinding.FragmentMainBinding
 
@@ -18,19 +19,19 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
         binding.apply {
             sendMoneyBtn.setOnClickListener {
-                navController.navigate(
+                findNavController().navigate(
                     MainFragmentDirections
                         .actionMainFragmentToChooseRecipientFragment()
                 )
             }
             viewTransactionsBtn.setOnClickListener {
-                navController.navigate(
+                findNavController().navigate(
                     MainFragmentDirections
                         .actionMainFragmentToViewTransactionFragment()
                 )
             }
             viewBalanceBtn.setOnClickListener {
-                navController.navigate(
+                findNavController().navigate(
                     MainFragmentDirections
                         .actionMainFragmentToViewBalanceFragment()
                 )

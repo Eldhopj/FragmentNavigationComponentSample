@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.fragmentnavigationcomponentsample.base.BaseFragment
 import com.example.fragmentnavigationcomponentsample.databinding.FragmentChooseRecipientBinding
 
@@ -30,9 +31,9 @@ class ChooseRecipientFragment : BaseFragment<FragmentChooseRecipientBinding>() {
     }
 
     private fun navigateToAmountFrag() {
-        val name = binding.inputRecipient.text.toString();
+        val name = binding.inputRecipient.text.toString()
         if (!TextUtils.isEmpty(name)) {
-            navController.navigate(
+            findNavController().navigate(
                 ChooseRecipientFragmentDirections
                     .actionChooseRecipientFragmentToSpecifyAmountFragment(name) // Passing value using safe args
             )
